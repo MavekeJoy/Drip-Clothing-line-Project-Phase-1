@@ -1,0 +1,128 @@
+{
+    "mens_clothing" : [
+    {
+    "id" : "1",
+    "name" : "T-shirt",
+    "price" :"1200",
+    "description" : "All Shirt colors are available",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTf1lPVH559UzXc2H0Kuk0_RLRdqgKedwBwOMVJYEXJ9w1pJwM64cSMw_45NjqR3Ok1m_k&usqp=CAU"
+    },
+    {
+    "id" : "2",
+    "name" : "Men Trousers",
+    "price" :"2500",
+    "description" : "All Trouser colors are available",
+    "image" :"https://i.pinimg.com/736x/8a/0d/3e/8a0d3ea0177e4d9893cd8546ea6e3d98.jpg"
+    },
+    {
+     "id" : "3",
+    "name" : "Hoodies",
+    "price" :"3500",
+    "description" : "All Hoodie colors are available",
+    "image" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZ6-y644uZNqN4mwxW-pk2NEsSXpIt7IBjEw&s"
+    },
+    {
+    "id" : "4",
+    "name" : "Official Shirts",
+    "price" :"2800",
+    "description" : "All Shirt colors are available",
+    "image" : "https://cottonking.com/cdn/shop/collections/All_Shirts.jpg?v=1707411161"
+    },
+    {
+    "id" : "5",
+    "name" : "Socks",
+    "price" :"1000",
+    "description" : "All Shirt colors are available",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9Qd1MxBJzf4yyPKlKsS_c8_9Zb1wNL8AO_9wCM6RdqPxF0kgggSqE9Wzbs9XHNPFZ-sY&usqp=CAU"
+    }
+   ],
+   "womens_clothing" :[
+   {
+    "id" : "1",
+    "name" : "Dress",
+    "price" :"1800",
+    "description" : "All Dress colors are available",
+    "image":"https://images.squarespace-cdn.com/content/v1/5a4ac215017db279bafd7f1b/1638449583209-CYEE4MR8E20J7XXJ1Y4R/Racks+2.jpg"
+   },
+   {
+    "id" : "2",
+    "name" : "Trousers",
+    "price" :"2200",
+    "description" : "All Trouser colors are available",
+    "image":"https://i.ebayimg.com/images/g/-7QAAOSwW4Jd7jUT/s-l1600.jpg"
+   },
+   {
+    "id" : "3",
+    "name" : "Tops",
+    "price" :"1500",
+    "description" : "All Shirt colors are available",
+    "image":"https://image.made-in-china.com/2f0j00ntAobuydPwpB/Fashion-Long-Sleeves-Ruffles-Casual-Ladies-Tops-Shirts-Elegant-Chiffon-Women-Blouses.jpg"
+   },
+   {
+    "id" : "4",
+    "name" : "Blazers",
+    "price" :"2800",
+    "description" : "Available in all sizes",
+    "image":"https://d1flfk77wl2xk4.cloudfront.net/Assets/03/331/XL_p0190633103.jpg"
+   },
+   {
+    "id" : "5",
+    "name" : "Socks",
+    "price" :"800",
+    "description" : "All colors are available",
+    "image":"https://i.ebayimg.com/images/g/baIAAOSwbAtjqUGw/s-l1200.jpg"
+   }
+  ],
+  "kids_clothing":[
+   {
+    "id" : "1",
+    "name" : "Boy Trousers",
+    "price" :"1000",
+    "description" : "All colors are available",
+    "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbNCONCh0CukA4ET7U3deUfJVqZoZGoAWSww&s"
+   },
+   {
+    "id" : "2",
+    "name" : "Girl Trousers",
+    "price" :"1000",
+    "description" : "All colors are available",
+    "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQltc2DgyPpGnc5yBz1RBf9uomQ7cdnClQSA&s"
+   }, 
+   {
+    "id" : "3",
+    "name" : "Hoodies",
+    "price" :"1000",
+    "description" : "All colors are available",
+    "image":"https://pictures-kenya.jijistatic.com/64587445_MzAwLTMzMS1lY2MxNGFhMzlk.webp"
+   }
+ ],
+ "Type_Accessories":[
+    {
+    "id" : "1",
+    "name" : "Earrings",
+    "price" :"1200",
+    "description" : "All  available",
+    "image": "https://rukminim2.flixcart.com/image/850/1000/xif0q/earring/s/p/9/na-earrings-5171-amazingkarts-original-imaghmwj2tdhunt2.jpeg?q=90&crop=false" 
+    },
+    {
+    "id" : "2",
+    "name" : "Necklace",
+    "price" :"1000",
+    "description" : "All  available",
+    "image":"https://images-cdn.ubuy.co.in/65539e6575ae197b1c01fbd4-uoyu-26-pcs-the-vampire-diaries-jewelry.jpg" 
+    },
+    {
+    "id" : "3",
+    "name" : "Watches",
+    "price" :"5000",
+    "description" : "All  available",
+    "image":"https://i.ebayimg.com/images/g/QWoAAOSwCElk~8n9/s-l1200.webp"
+    },
+    {
+    "id" : "4",
+    "name" : "Watches",
+    "price" :"3000",
+    "description" : "All available",
+    "image":"https://optica.africa/cdn/shop/articles/omid-armin-Zt99Ho5Hq3s-unsplash_1626_x_1080.jpg?height=400&v=1699625484"
+    }
+   ]}
