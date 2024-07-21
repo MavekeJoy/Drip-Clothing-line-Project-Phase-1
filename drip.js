@@ -1,107 +1,48 @@
-const mens_clothing = document.getElementById("mens-clothing");
-if (mens_clothing) {
-  function fetchMensclothing() {
-    fetch("http://localhost:3000/mens_clothing")
-      .then((response) => response.json())
-      .then((data) => {
-        renderMensClothing(data);
+document.addEventListener('DOMContentLoaded', () => {
+    const mens_clothing = document.getElementById("mens-clothing");
+    const womens_clothing = document.getElementById("womens-clothing");
+    const kids_clothing = document.getElementById("kids-clothing");
+    const type_accessories = document.getElementById("Type-accessories");
+    const cartCountElement = document.getElementById('cart-count');
+    let cartCount = parseInt(localStorage.getItem('cartCount')) || 0;
+    cartCountElement.textContent = cartCount;
+  
+    function updateCartCount() {
+      cartCount++;
+      cartCountElement.textContent = cartCount;
+      localStorage.setItem('cartCount', cartCount);
+    }
+  
+    function fetchAndRenderClothing(category, url, renderFunction) {
+      if (category) {
+        fetch(url)
+          .then(response => response.json())
+          .then(data => renderFunction(data));
+      }
+    }
+  
+    function renderClothing(data, container) {
+      data.forEach(element => {
+        const div = document.createElement("div");
+        div.classList = "category bg-gray-100 p-4 rounded-lg shadow-md";
+        div.innerHTML = `
+          <h2 class="text-xl font-semibold">${element.name}</h2>
+          <img src="${element.image}" alt="${element.name}">
+          <p>PRICE: ${element.price}</p>
+          <p>DESCRIPTION: ${element.description}</p>
+          <button class="bg-purple-500 text-white rounded-lg py-2 px-4 mt-4 hover:bg-purple-600 add-to-cart">Add to Cart</button>
+        `;
+        container.appendChild(div);
       });
-  }
-  fetchMensclothing();
-  function renderMensClothing(data) {
-    data.forEach((element) => {
-      const div = document.createElement("div");
-      div.classList = "category bg-gray-100 p-4 rounded-lg shadow-md";
-      div.innerHTML = `
-      <h2 class="text-xl font-semibold" >${element.name}</h2>
-            <img src= ${element.image}>
-            <p>PRICE : ${element.price}</p>
-            <p>DESCRIPTION : ${element.description}</p>
-            <button class="bg-purple-500 text-white rounded-lg py-2 px-4 mt-4 hover:bg-purple-600">Add toCart</button>
-      `;
-      mens_clothing.appendChild(div);
-    });
-  }
-}
-
-const womens_clothing = document.getElementById("womens-clothing");
-if (womens_clothing) {
-  function fetchWomensclothing() {
-    fetch("http://localhost:3000/womens_clothing")
-      .then((response) => response.json())
-      .then((data) => {
-        renderWomensClothing(data);
+  
+      container.querySelectorAll('.add-to-cart').forEach(button => {
+        button.addEventListener('click', updateCartCount);
       });
-  }
-  fetchWomensclothing();
-  function renderWomensClothing(data) {
-    data.forEach((element) => {
-      const div = document.createElement("div");
-      div.classList = "category bg-gray-100 p-4 rounded-lg shadow-md";
-      div.innerHTML = `
-      <h2 class="text-xl font-semibold" >${element.name}</h2>
-            <img src= ${element.image}>
-            <p>PRICE : ${element.price}</p>
-            <p>DESCRIPTION : ${element.description}</p>
-            <button class="bg-purple-500 text-white rounded-lg py-2 px-4 mt-4 hover:bg-purple-600">Add toCart</button>
-      `;
-      womens_clothing.appendChild(div);
-    });
-  }
-}
-
-
-const kids_clothing = document.getElementById("kids-clothing");
-if (kids_clothing) {
-  function fetchKidsclothing() {
-    fetch("http://localhost:3000/kids_clothing")
-      .then((response) => response.json())
-      .then((data) => {
-        renderKidsClothing(data);
-      });
-  }
-  fetchKidsclothing();
-  function renderKidsClothing(data) {
-    data.forEach((element) => {
-      const div = document.createElement("div");
-      div.classList = "category bg-gray-100 p-4 rounded-lg shadow-md";
-      div.innerHTML = `
-      <h2 class="text-xl font-semibold" >${element.name}</h2>
-            <img src= ${element.image}>
-            <p>PRICE : ${element.price}</p>
-            <p>DESCRIPTION : ${element.description}</p>
-            <button class="bg-purple-500 text-white rounded-lg py-2 px-4 mt-4 hover:bg-purple-600">Add toCart</button>
-      `;
-      kids_clothing.appendChild(div);
-    });
-  }
-}
-
-
-
-const Type_accesories = document.getElementById("Type-accessories");
-if (Type_accesories) {
-  function fetchTypeAccessories() {
-    fetch("http://localhost:3000/Type_Accessories")
-      .then((response) => response.json())
-      .then((data) => {
-        rendertypeAccessories(data);
-      });
-  }
-  fetchTypeAccessories();
-  function rendertypeAccessories(data) {
-    data.forEach((element) => {
-      const div = document.createElement("div");
-      div.classList = "category bg-gray-100 p-4 rounded-lg shadow-md";
-      div.innerHTML = `
-      <h2 class="text-xl font-semibold" >${element.name}</h2>
-            <img src= ${element.image}>
-            <p>PRICE : ${element.price}</p>
-            <p>DESCRIPTION : ${element.description}</p>
-            <button class="bg-purple-500 text-white rounded-lg py-2 px-4 mt-4 hover:bg-purple-600">Add toCart</button>
-      `;
-      Type_accesories.appendChild(div);
-    });
-  }
-}
-
+    }
+  
+    fetchAndRenderClothing(mens_clothing, "http://localhost:3000/mens_clothing", data => renderClothing(data, mens_clothing));
+    fetchAndRenderClothing(womens_clothing, "http://localhost:3000/womens_clothing", data => renderClothing(data, womens_clothing));
+    fetchAndRenderClothing(kids_clothing, "http://localhost:3000/kids_clothing", data => renderClothing(data, kids_clothing));
+    fetchAndRenderClothing(type_accessories, "http://localhost:3000/Type_Accessories", data => renderClothing(data, type_accessories));
+  });
+  
